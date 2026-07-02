@@ -1,0 +1,203 @@
+/* ============================================================
+   Port Manager — dark dashboard styles
+   Complement ao Tailwind CDN: componentes que usam classes
+   dinâmicas ou precisam de seletores não suportados inline.
+============================================================ */
+
+/* ── Form inputs ── */
+.form-input {
+  display: block;
+  width: 100%;
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+  color: #f1f5f9;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  font-family: inherit;
+  line-height: 1.5;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+.form-input::placeholder { color: #475569; }
+.form-input:hover  { border-color: #475569; }
+.form-input:focus  {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.2);
+  background: #0c0e2a;
+}
+/* hide browser number spinner */
+.form-input[type=number]::-webkit-inner-spin-button,
+.form-input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+.form-input[type=number] { -moz-appearance: textfield; }
+
+/* ── Search input ── */
+.search-dark {
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  border-radius: 0.5rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.875rem;
+  color: #f1f5f9;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  font-family: inherit;
+  line-height: 1.5;
+}
+.search-dark::placeholder { color: #475569; }
+.search-dark:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+.search-dark::-webkit-search-cancel-button { display: none; }
+
+/* ── Field label ── */
+.field-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #94a3b8;
+  display: block;
+}
+
+/* ── Card system ── */
+.card {
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.3);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid #334155;
+  background: rgba(15,23,42,0.5);
+}
+
+.card-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ── KPI cards ── */
+.kpi-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.kpi-card:hover {
+  border-color: #334155;
+  box-shadow: 0 0 0 1px #334155 inset;
+}
+
+.kpi-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.kpi-value {
+  font-size: 1.875rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: #f1f5f9;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.2rem;
+}
+
+.kpi-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #475569;
+}
+
+.kpi-sub {
+  font-size: 0.6875rem;
+  color: #334155;
+  margin-top: 0.1rem;
+}
+
+/* ── Table header cells ── */
+.th-cell {
+  padding: 0.625rem 1rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #475569;
+  white-space: nowrap;
+}
+
+/* ── Slide-in animation ── */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-slide-in { animation: slideIn 0.2s ease forwards; }
+
+/* ── Port heatmap cells (sidebar) ── */
+.port-cell {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  cursor: default;
+  transition: transform 0.15s ease, opacity 0.15s ease;
+  line-height: 1;
+  user-select: none;
+}
+.port-cell:hover { transform: scale(1.15); opacity: 0.9; }
+
+.port-cell-free  { background: #052e16; color: #34d399; border-color: #064e3b; }
+.port-cell-used  { background: #1e1b4b; color: #818cf8; border-color: #312e81; }
+.port-cell-heavy { background: #431407; color: #fb923c; border-color: #7c2d12; }
+.port-cell-editing {
+  outline: 2px solid #6366f1;
+  outline-offset: 1px;
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.25);
+}
+
+/* ── Port badges (table rows) — dark palette ── */
+.port-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 9px;
+  border-radius: 9999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+  line-height: 1.6;
+}
+
+.port-badge-1,  .port-badge-9  { background:#1e1b4b; color:#a5b4fc; border-color:#312e81; }
+.port-badge-2,  .port-badge-10 { background:#052e16; color:#6ee7b7; border-color:#065f46; }
+.port-badge-3,  .port-badge-11 { background:#4a044e; color:#f0abfc; border-color:#701a75; }
+.port-badge-4,  .port-badge-12 { background:#422006; color:#fcd34d; border-color:#78350f; }
+.port-badge-5,  .port-badge-13 { background:#2e1065; color:#c4b5fd; border-color:#4c1d95; }
+.port-badge-6,  .port-badge-14 { background:#450a0a; color:#fca5a5; border-color:#7f1d1d; }
+.port-badge-7,  .port-badge-15 { background:#082f49; color:#7dd3fc; border-color:#0c4a6e; }
+.port-badge-8,  .port-badge-16 { background:#022c22; color:#6ee7b7; border-color:#064e3b; }
